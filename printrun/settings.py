@@ -271,6 +271,8 @@ class Settings(object):
         self._add(SpinSetting("xy_feedrate", 3000, 0, 50000, _("X && Y manual feedrate"), _("Feedrate for Control Panel Moves in X and Y (mm/min)"), "Printer"))
         self._add(SpinSetting("z_feedrate", 100, 0, 50000, _("Z manual feedrate"), _("Feedrate for Control Panel Moves in Z (mm/min)"), "Printer"))
         self._add(SpinSetting("e_feedrate", 100, 0, 1000, _("E manual feedrate"), _("Feedrate for Control Panel Moves in Extrusions (mm/min)"), "Printer"))
+        self._add(StringSetting("slicecommand", "Slic3r/slic3r-console.exe $s --output $o", _("Slice command"), _("Slice command"), "External"))
+        self._add(StringSetting("sliceoptscommand", "Slic3r/slic3r.exe --ignore-nonexistent-config", _("Slicer options command"), _("Slice settings command"), "External"))
         self._add(StringSetting("start_command", "", _("Start command"), _("Executable to run when the print is started"), "External"))
         self._add(StringSetting("final_command", "", _("Final command"), _("Executable to run when the print is finished"), "External"))
         self._add(StringSetting("error_command", "", _("Error command"), _("Executable to run when an error occurs"), "External"))
