@@ -2235,7 +2235,7 @@ Printrun. If not, see <http://www.gnu.org/licenses/>."""
             try:
                 preset = config.get("presets", cat)
                 # Starting from Slic3r 1.3.0, preset names have no extension
-                if version.split(".") >= ["1","3","0"]: preset += ".ini"
+                if version.split(".") >= ["1","3","0"] and not "prusa3d" in version: preset += ".ini"
                 self.slic3r_configs[cat] = preset
             except:
                 preset = None
