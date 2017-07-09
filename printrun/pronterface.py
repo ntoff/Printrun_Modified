@@ -2275,7 +2275,7 @@ Printrun. If not, see <http://www.gnu.org/licenses/>."""
             version = config.get("dummy", "version") # Slic3r version
             preset = os.path.basename(file)
             # Starting from Slic3r 1.3.0, preset names have no extension
-            if version.split(".") >= ["1","3","0"]:
+            if version.split(".") >= ["1","3","0"] and not "prusa3d" in version:
                 preset = os.path.splitext(preset)[0]
             config.set("presets", cat, preset)
             f = StringIO.StringIO()
